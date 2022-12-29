@@ -18,5 +18,17 @@
 		},
 		"jupyter.sendSelectionToInteractiveWindow": true,
 		"jupyter.notebookFileRoot": "${workspaceFolder}",
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "RUN model_api_example",
+				"type": "python",
+				"request": "launch",
+				"module": "examples.simple_regression_example.model_api_example",
+				"console": "integratedTerminal"
+			}
+		]
 	}
 }

@@ -23,7 +23,7 @@ def predict_salary():
         return {'success': True, 'body': {'Salary': res[0][0]}}, 200
 
     else:
-         return {'success': False, 'message': 'API only accept JSON body'}, 401
+         return {'success': False, 'message': 'API only accept JSON body'}, 400
 
 
 if __name__ == '__main__':

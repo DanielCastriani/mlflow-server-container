@@ -13,3 +13,6 @@ Change Configs
 ```sh
 docker-compose up
 ```
+
+# Datasets
+https://www.kaggle.com/datasets/codebreaker619/salary-data-with-age-and-experience

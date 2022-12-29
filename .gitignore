@@ -2,3 +2,4 @@
 .venv/
 volumes/
 outputs/
+__pycache__/

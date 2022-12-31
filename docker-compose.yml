@@ -55,13 +55,3 @@ networks:
         driver: bridge
     backend:
         driver: bridge
-
-volumes:
-    dbdata:
-        external: true
-
-    mlartifacts:
-        external: true
-
-    nginx_logs:
-        external: true

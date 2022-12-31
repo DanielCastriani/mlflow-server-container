@@ -96,11 +96,14 @@ client = mlflow.MlflowClient()
 
 # client.get_latest_versions don't return all versions. 
 # We will need to fetch  models while response bringing models
-old_models = client.get_latest_versions(model_name, ['Production'])
-while len(old_models) > 0:
-    for model in old_models:
-        client.transition_model_version_stage(model_name, model.version, 'Archived')    
+try:
     old_models = client.get_latest_versions(model_name, ['Production'])
+    while len(old_models) > 0:
+        for model in old_models:
+            client.transition_model_version_stage(model_name, model.version, 'Archived')    
+        old_models = client.get_latest_versions(model_name, ['Production'])
+except mlflow.MlflowException as ex:
+    print(ex.message)
 
 # Register new model creating new version       
 model_version = mlflow.register_model(
